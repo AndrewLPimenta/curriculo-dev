@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  height: 500vh;
+  background-color: #000;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  padding: 60px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+
+header.rolagem {
+  background-color: #fff;
+  padding: 20px 4%;
+}
+
+header.rolagem a,
+header.rolagem i {
+  color: #5acffe;
+}
+
+header i {
+  font-size: 30px;
+  color: #fff;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-contato button {
+  width: 120px;
+  height: 40px;
+  border: 0;
+  background-color: #0f80c7;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+  border-radius: 15px;
+}
+
+/* Estilos do menu hamburguer */
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+  /* Garantir que o botão hambúrguer esteja acima do menu */
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 9px;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburger span:nth-of-type(1) {
+  top: 0;
+}
+
+.hamburger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-of-type(3) {
+  top: 100%;
+}
+
+.hamburger input:checked~span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0;
+  left: 5px;
+}
+
+.hamburger input:checked~span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.hamburger input:checked~span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* Menu responsivo */
+@media (max-width: 750px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #02679d;
+    /* Cor de fundo do menu */
+    clip-path: circle(100px at 90% -15%);
+    transition: 1s ease-out;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    gap: 20px;
+    /* Espaço entre os itens */
+    pointer-events: none;
+    opacity: 0;
+    padding-top: 50px;
+    /* Espaço superior para dar margem ao topo */
+  }
+
+  .nav-list a {
+    font-size: 24px;
+    opacity: 0;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-list li {
+    display: block;
+    margin-bottom: 25px;
+    /* Espaçamento entre os itens */
+  }
+
+  /* Estilos de transição */
+  .nav.active .nav-list {
+    clip-path: circle(1500px at 90% -15%);
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .nav.active .nav-list a {
+    opacity: 1;
+  }
+
+  /* Botão hambúrguer no menu aberto */
+  .nav.active .hamburger {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+    border-top-color: transparent;
+  }
+
+  .nav.active .hamburger span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav.active .hamburger span:nth-of-type(2) {
+    width: 0;
+    opacity: 0;
+  }
+
+  .nav.active .hamburger span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
+
+  /* Estilo do botão de contato */
+  .btn-contato {
+    margin-top: 30px;
+  }
+
+
+}
+
+.banner {
+  height: 100vh;
+  background-image: url(../src/assets/banner-desktop.png);
+  background-position: 80% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+  .banner {
+    background-image: url(../src/assets/banner-desktop.png);
+    background-position: 60% 0;
+
+  }
+}
+
+.overlay {
+  display: flex;
+  left: 30;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+
+}
+
+.banner h1 {
+  margin-top: 15rem;
+  margin: 15rem 20rem 15rem 10rem;
+  font-size: 3.5em;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  top: 60%;
+}
+
+.banner h1 span {
+  color: #1289a7;
+}
+@media screen and (max-width: 750px) {
+  .banner h1 {
+    margin: 35.8rem 2rem 15rem 5rem;
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+  }
+  header.rolagem {
+    background-color: #a31919;
+    padding: 20px 4%;
+  }
+}
