@@ -40,8 +40,8 @@ const Header = () => {
               <li><Link to="/Information">Sobre mim</Link></li>
               <li><Link to="/Portifolio">Projetos</Link></li>
               <li><Link to="/Home">Home</Link></li>
-              <li><Link to="/blog">Redes Sociais</Link></li>
-              <li className="btn-contato"><Link to="/contato"><button>CONTATO</button></Link></li>
+              <li><Link to="/Network">Redes Sociais</Link></li>
+              <li className="btn-contato"><Link to="/contato"><button>Contato</button></Link></li>
             </ul>
           </div>
 
